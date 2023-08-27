@@ -14,7 +14,7 @@ const displayItems = (data) => {
         const CardContainer = document.getElementById ('card-Container');
         const div = document.createElement ('div'); 
         div.innerHTML = `
-        <div class="card card-compact bg-base-100 border-2 p-3">
+        <div  onclick="idDataLode('${element.id}')" class="card card-compact bg-base-100 border-2 p-3">
                 <figure><img src="${element.image}" alt="Shoes" /></figure>
                 <div class="card-body">
                   <h2 class="card-title">Features</h2>
@@ -41,4 +41,15 @@ const displayItems = (data) => {
         console.log (element)
     });
     
+}
+
+
+
+
+
+const idDataLode = async (id) => {
+    // console.log ('name', id)
+    const res = await fetch (`https://openapi.programming-hero.com/api/ai/tool/${id}`)
+    const data = res.json(); 
+    console.log (data)
 }
