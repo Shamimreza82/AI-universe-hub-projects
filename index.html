@@ -32,9 +32,9 @@
     </header>
     <main>
       <section>
-        <div 
+        <div
           id="card-Container"
-          class="h-[200px] lg:w-4/5 m-auto grid lg:grid-cols-3 gap-4 mt-4"
+          class="lg:w-4/5 m-auto grid lg:grid-cols-3 md:grid-cols-2 gap-4 mt-4"
         >
           <!-- <div class="card card-compact bg-base-100 border-2 p-3">
                 <figure><img src="./Rectangle 23.png" alt="Shoes" /></figure>
@@ -59,19 +59,41 @@
               </div> -->
         </div>
         <div>
-          <!-- You can open the modal using ID.showModal() method -->
-          <dialog id="my_modal_3" class="modal">
+          <!-- You can open the modal using ID.showModal() method '' onclick="showdata.showModal()"  ''-->
+          <dialog id="showdata" class="modal modal-bottom sm:modal-middle">
             <form method="dialog" class="modal-box">
               <button
-                class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 bg-red-600">
+                class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 bg-red-600"
+              >
                 ✕
               </button>
-              <h3 class="font-bold text-lg">Hello!</h3>
-              <p class="py-4">Press ESC key or click on ✕ button to close</p>
+              <div>
+                <div class="flex justify-between items-center gap-3">
+                  <div class="bg-slate-200 p-3 rounded-md">
+                    <h1>
+                      ChatGPT is an AI-powered chatbot platform that uses
+                      OpenAI's GPT technology to simulate human conversation.
+                    </h1>
+                    <div class="flex justify-between">
+                      <span>$10/month Basic</span>
+                      <span>$10/month Basic</span>
+                      <span>$10/month Basic</span>
+                    </div>
+                  </div>
+                  <div>
+                    <img src="./Rectangle 15.png" alt="" />
+                    <h1>Hi, how are you doing today?</h1>
+                    <h2>I'm doing well, thank you for asking. How can I assist you today?</h2>
+                  </div>
+                </div>
+              </div>
             </form>
           </dialog>
         </div>
       </section>
+      <div class="flex justify-center items-center mt-4">
+        <button class="btn btn-accent">Accent</button>
+      </div>
     </main>
     <footer></footer>
 

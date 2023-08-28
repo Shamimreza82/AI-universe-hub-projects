@@ -3,9 +3,10 @@ const CardLode = async () => {
     const data = await res.json();
     const aiNews = data.data.tools; 
     displayItems (aiNews);
-
 }
 CardLode()
+
+
 
 const displayItems = (data) => {
 
@@ -14,7 +15,7 @@ const displayItems = (data) => {
         const CardContainer = document.getElementById ('card-Container');
         const div = document.createElement ('div'); 
         div.innerHTML = `
-        <div  onclick="idDataLode('${element.id}')" class="card card-compact bg-base-100 border-2 p-3">
+        <div  onclick="idDataLode('${element.id}')" class=" rounded-md lg:h-[400px] card-compact bg-base-100 border-2 p-3">
                 <figure><img src="${element.image}" alt="Shoes" /></figure>
                 <div class="card-body">
                   <h2 class="card-title">Features</h2>
@@ -25,7 +26,7 @@ const displayItems = (data) => {
                     <div class="flex justify-between items-center">
                         <div class="space-y-3">
                              <h1 class="text-base font-bold">${element.name}</h1>
-                             <h1>${element.published_in}</h1> 
+                             <h1>Published Date: ${element.published_in}</h1> 
                         </div>
                         <div >
                             <div class=" h-7 w-7 rounded-full relative bg-red-100">
@@ -38,7 +39,7 @@ const displayItems = (data) => {
         `;
         CardContainer.appendChild (div)
 
-        console.log (element)
+        // console.log (element)
     });
     
 }
@@ -48,8 +49,12 @@ const displayItems = (data) => {
 
 
 const idDataLode = async (id) => {
-    // console.log ('name', id)
     const res = await fetch (`https://openapi.programming-hero.com/api/ai/tool/${id}`)
-    const data = res.json(); 
-    console.log (data)
+    const data = await res.json(); 
+    // console.log (data.data)
+    display (data.data)
+}
+const display = (phone) => {
+    console.log (phone)
+    showdata.showModal()
 }
