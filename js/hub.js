@@ -55,6 +55,14 @@ const idDataLode = async (id) => {
     display (data.data)
 }
 const display = (phone) => {
+
+   const phoneDes =  document.getElementById ('phone-des');
+   phoneDes.innerText = phone.description;
+   const display = document.getElementById ('right-part');
+    const image = document.createElement('div')
+    image.innerHTML = `
+    <img src="${phone.image_link[0]}" alt="" />
+    `
     console.log (phone)
     showdata.showModal()
 }

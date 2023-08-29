@@ -60,30 +60,48 @@
         </div>
         <div>
           <!-- You can open the modal using ID.showModal() method '' onclick="showdata.showModal()"  ''-->
-          <dialog id="showdata" class="modal modal-bottom sm:modal-middle">
-            <form method="dialog" class="modal-box">
+          <dialog id="showdata" class="modal modal-bottom sm:modal-middle ">
+            <form method="dialog" class="modal-box max-w-4xl ">
               <button
                 class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 bg-red-600"
               >
                 ✕
               </button>
               <div>
-                <div class="flex justify-between items-center gap-3">
-                  <div class="bg-slate-200 p-3 rounded-md">
-                    <h1>
+                <div id="left-part" class="flex justify-between gap-3 ">
+                  <div class=" bg-red-100 p-3 rounded-md space-y-6 lg:w-2/3  ">
+                    <h1 id="phone-des" class="font-bold">
                       ChatGPT is an AI-powered chatbot platform that uses
                       OpenAI's GPT technology to simulate human conversation.
                     </h1>
-                    <div class="flex justify-between">
+                    <div class="flex justify-around">
                       <span>$10/month Basic</span>
                       <span>$10/month Basic</span>
                       <span>$10/month Basic</span>
                     </div>
+                    <div class="flex justify-around">
+                      <div>
+                        <h1 class="font-bold">Features</h1>
+                        <ul id="">
+                          <li>Customizable responses</li>
+                          <li>Multilingual support</li>
+                          <li>Seamless integration</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h1 class="font-bold">integrations</h1>
+                        <ul>
+                          <li>Customizable responses</li>
+                          <li>Multilingual support</li>
+                          <li>Seamless integration</li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <img src="./Rectangle 15.png" alt="" />
-                    <h1>Hi, how are you doing today?</h1>
-                    <h2>I'm doing well, thank you for asking. How can I assist you today?</h2>
+                  <div id="right-part" class="space-y-3">
+                    <!-- <img src="./Rectangle 15.png" alt="" /> -->
+                    <!-- <h1 class="text-center font-bold">Hi, how are you doing today?</h1>
+                    <h2 class="text-center" >I'm doing well, thank you for asking. How can I assist you today?</h2> -->
                   </div>
                 </div>
               </div>
