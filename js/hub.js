@@ -1,20 +1,16 @@
 const CardLode = async () => {
-    const res = await fetch (`https://openapi.programming-hero.com/api/ai/tools`);
-    const data = await res.json();
-    const aiNews = data.data.tools; 
-    displayItems (aiNews);
-}
-CardLode()
-
-
+  const res = await fetch(`https://openapi.programming-hero.com/api/ai/tools`);
+  const data = await res.json();
+  const aiNews = data.data.tools;
+  displayItems(aiNews);
+};
+CardLode();
 
 const displayItems = (data) => {
-
-    data.forEach(element => {
-
-        const CardContainer = document.getElementById ('card-Container');
-        const div = document.createElement ('div'); 
-        div.innerHTML = `
+  data.forEach((element) => {
+    const CardContainer = document.getElementById("card-Container");
+    const div = document.createElement("div");
+    div.innerHTML = `
         <div  onclick="idDataLode('${element.id}')" class=" rounded-md lg:h-[400px] card-compact bg-base-100 border-2 p-3">
                 <figure><img src="${element.image}" alt="Shoes" /></figure>
                 <div class="card-body">
@@ -37,32 +33,60 @@ const displayItems = (data) => {
                 </div>
               </div>
         `;
-        CardContainer.appendChild (div)
+    CardContainer.appendChild(div);
 
-        // console.log (element)
-    });
-    
-}
-
-
-
-
+    // console.log (element)
+  });
+};
 
 const idDataLode = async (id) => {
-    const res = await fetch (`https://openapi.programming-hero.com/api/ai/tool/${id}`)
-    const data = await res.json(); 
-    // console.log (data.data)
-    display (data.data)
-}
+  const res = await fetch(
+    `https://openapi.programming-hero.com/api/ai/tool/${id}`
+  );
+  const data = await res.json();
+  // console.log (data.data)
+  display(data.data);
+};
 const display = (phone) => {
+  const display = document.getElementById("right-part");
+  display.innerHTML = `
+    <div>
+        <img src="${phone.image_link[0]}" alt="" />
+    </div>
+    <h1 class="text-center font-bold">${phone.accuracy.description}</h1>
+    <h2 class="text-center" >${phone.description}</h2> 
+    
+    `;
 
-   const phoneDes =  document.getElementById ('phone-des');
-   phoneDes.innerText = phone.description;
-   const display = document.getElementById ('right-part');
-    const image = document.createElement('div')
-    image.innerHTML = `
-    <img src="${phone.image_link[0]}" alt="" />
-    `
-    console.log (phone)
-    showdata.showModal()
-}
+  const left = document.getElementById("left-part");
+  left.innerHTML = `
+    <h1 class="font-bold"> ${phone.description
+    } </h1>
+  <div class="flex justify-around">
+    <span>$10/month Basic</span>
+    <span>$10/month Basic</span>
+    <span>$10/month Basic</span>
+  </div>
+  <div class="flex justify-around">
+    <div>
+      <h1 class="font-bold">Features</h1>
+      <ul id="">
+        <li>. ${phone.features[1].feature_name}</li>
+        <li>. ${phone.features[2].feature_name}</li>
+        <li>. ${phone.features[3].feature_name}</li>
+      </ul>
+    </div>
+    <div>
+      <h1 class="font-bold">integrations</h1>
+      <ul>
+        <li>. ${phone.integrations[0]}</li>
+        <li>. ${phone.integrations[1] || " "} </li>
+        <li>. ${phone.integrations[2] || " "}</li>
+      </ul>
+    </div>
+  </div>
+    
+    `;
+  console.log(phone);
+  showdata.showModal();
+};
